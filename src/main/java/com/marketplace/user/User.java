@@ -19,7 +19,10 @@ public class User {
     private String firstName;
 
     @Column(length = 45, nullable = false, name = "last_name")
-    private String LastName;
+    private String lastName;
+
+    private boolean enabled;
+
 
     public User() {
     }
@@ -57,11 +60,19 @@ public class User {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        lastName = lastName;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override
@@ -71,7 +82,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
-                ", LastName='" + LastName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", enabled=" + enabled +
                 '}';
     }
 }
