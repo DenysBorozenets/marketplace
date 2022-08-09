@@ -24,6 +24,7 @@
                 <th>E-mail</th>
                 <th>First name</th>
                 <th>Last name</th>
+                <th>Enabled</th>
                 <th></th>
             </tr>
             </thead>
@@ -34,7 +35,8 @@
                     <td>[[${user.id}]]</td>
                     <td>[[${user.email}]]</td>
                     <td>[[${user.firstName}]]</td>
-                    <td>[[${user.LastName}]]</td>
+                    <td>[[${user.lastName}]]</td>
+                    <td>[[${user.enabled}]]</td>
                     <td>
 
                         <a class="h4 mr-3" th:href="@{'/users/edit/' + ${user.id}}">Edit</a>
