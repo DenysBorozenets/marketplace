@@ -12,50 +12,62 @@
         </div>
 
         <!--/*@thymesVar id="user" type="com.marketplace.user"*/-->
+
         <form th:action="@{/users/save}" method="post" th:object="${user}" style="max-width: 500px; margin: 0 auto;">
             <div class="border border-secondary rounded p-2">
 
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">E-mail</label>
                     <div class="col-sm-8">
-                        <input type="email" th:field="*{email}" class="form-control">
+
+                        <!--/*@thymesVar id="email" type="com"*/-->
+                        <input type="email" th:field="*{email}" class="form-control" required minlength="6" maxlength="45" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">First name</label>
                     <div class="col-sm-8">
-                        <input type="text" th:field="*{firstName}" class="form-control">
+                        <!--/*@thymesVar id="firstName" type="com"*/-->
+                        <input type="text" th:field="*{firstName}" class="form-control" required minlength="6" maxlength="45" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Last name</label>
                     <div class="col-sm-8">
-                        <input type="text" th:field="*{lastName}" class="form-control">
+                        <!--/*@thymesVar id="lastName" type="com"*/-->
+                        <input type="text" th:field="*{lastName}" class="form-control" required minlength="6" maxlength="45" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Password</label>
                     <div class="col-sm-8">
-                        <input type="password" th:field="*{password}" class="form-control">
+                        <!--/*@thymesVar id="password" type="com"*/-->
+                        <input type="password" th:field="*{password}" class="form-control" required minlength="6" maxlength="25" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Enabled</label>
                     <div class="col-sm-8">
+                        <!--/*@thymesVar id="enabled" type="com"*/-->
                         <input type="checkbox" th:field="*{enabled}" />
                     </div>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary m-2">Save</button>
-                    <button type="button" class="btn btn-secondary m-2">Cancel</button>
+                    <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>
                 </div>
 
             </div>
         </form>
     </div>
 </body>
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/users}]]";
+    }
+</script>
 </html>

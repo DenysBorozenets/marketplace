@@ -12,13 +12,13 @@ public class User {
     @Column(nullable = false, unique = true, length = 45)
     private String email;
 
-    @Column(length = 25, nullable = false)
+    @Column(nullable = false, length = 25)
     private String password;
 
-    @Column(length = 45, nullable = false, name = "first_name")
+    @Column(nullable = false, length = 45, name = "first_name")
     private String firstName;
 
-    @Column(length = 45, nullable = false, name = "last_name")
+    @Column(nullable = false, length = 45, name = "last_name")
     private String lastName;
 
     private boolean enabled;
@@ -64,7 +64,7 @@ public class User {
     }
 
     public void setLastName(String lastName) {
-        lastName = lastName;
+        this.lastName = lastName;
     }
 
     public boolean isEnabled() {
